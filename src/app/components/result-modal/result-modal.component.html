@@ -1,0 +1,30 @@
+<div class="modal-overlay">
+  <div class="modal" [class.win]="won()" [class.lose]="!won()">
+    <div class="modal-icon">
+      @if (won()) {
+        <span class="icon-win">🏆</span>
+      } @else {
+        <span class="icon-lose">💀</span>
+      }
+    </div>
+
+    <h2 class="modal-title">
+      {{ won() ? 'You Won!' : 'Game Over' }}
+    </h2>
+
+    <div class="modal-details">
+      <p class="word-reveal">
+        The word was: <strong>{{ word() }}</strong>
+      </p>
+      @if (won()) {
+        <p class="score">
+          Wrong guesses: {{ wrongGuesses() }} / {{ maxWrong() }}
+        </p>
+      }
+    </div>
+
+    <button class="play-again-btn" (click)="playAgain.emit()">
+      Play Again
+    </button>
+  </div>
+</div>

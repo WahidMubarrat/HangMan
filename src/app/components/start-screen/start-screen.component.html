@@ -1,0 +1,36 @@
+<div class="start-screen">
+  <div class="title-section">
+    <h1 class="game-title">Hangman</h1>
+    <p class="subtitle">Guess the word before time runs out!</p>
+  </div>
+
+  <div class="options-section">
+    <div class="option-group">
+      <label for="category">Category</label>
+      <select id="category" [value]="selectedCategory()" (change)="onCategoryChange($event)">
+        @for (cat of categories; track cat.value) {
+          <option [value]="cat.value">{{ cat.label }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="option-group">
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty" [value]="selectedDifficulty()" (change)="onDifficultyChange($event)">
+        @for (diff of difficulties; track diff.value) {
+          <option [value]="diff.value">{{ diff.label }}</option>
+        }
+      </select>
+    </div>
+  </div>
+
+  <button class="start-btn" (click)="startGame()">Start Game</button>
+
+  <button class="stats-toggle" (click)="toggleStats()">
+    {{ showStats() ? 'Hide Statistics' : 'View Statistics' }}
+  </button>
+
+  @if (showStats()) {
+    <app-stats />
+  }
+</div>

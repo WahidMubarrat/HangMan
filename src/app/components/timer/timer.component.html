@@ -1,0 +1,16 @@
+<div class="timer" [class.urgent]="isUrgent()">
+  <div class="timer-circle">
+    <svg viewBox="0 0 100 100" class="timer-svg">
+      <circle class="timer-bg" cx="50" cy="50" r="42" />
+      <circle
+        class="timer-progress"
+        cx="50"
+        cy="50"
+        r="42"
+        [style.strokeDashoffset]="100 - percentage()"
+      />
+    </svg>
+    <span class="timer-value">{{ value() }}</span>
+  </div>
+  <span class="timer-label">seconds</span>
+</div>

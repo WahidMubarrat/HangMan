@@ -1,0 +1,7 @@
+<div class="word-display">
+  @for (letter of word(); track $index) {
+    <span class="letter-slot" [class.revealed]="letter !== '_'">
+      {{ letter === '_' ? '' : letter }}
+    </span>
+  }
+</div>

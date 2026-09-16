@@ -1,0 +1,48 @@
+<div class="hangman-container">
+  <svg viewBox="0 0 200 250" class="hangman-svg">
+    <!-- Gallows -->
+    <line x1="20" y1="240" x2="180" y2="240" stroke="#333" stroke-width="4" stroke-linecap="round" />
+    <line x1="60" y1="240" x2="60" y2="20" stroke="#333" stroke-width="4" stroke-linecap="round" />
+    <line x1="60" y1="20" x2="140" y2="20" stroke="#333" stroke-width="4" stroke-linecap="round" />
+    <line x1="140" y1="20" x2="140" y2="50" stroke="#333" stroke-width="4" stroke-linecap="round" />
+
+    <!-- 1: Head -->
+    @if (wrongGuesses() >= 1) {
+      <circle class="body-part head" cx="140" cy="70" r="20" fill="none" stroke="#e74c3c" stroke-width="3" />
+    }
+
+    <!-- 2: Body -->
+    @if (wrongGuesses() >= 2) {
+      <line class="body-part body" x1="140" y1="90" x2="140" y2="150" stroke="#e74c3c" stroke-width="3" stroke-linecap="round" />
+    }
+
+    <!-- 3: Left Arm -->
+    @if (wrongGuesses() >= 3) {
+      <line class="body-part arm-left" x1="140" y1="110" x2="110" y2="130" stroke="#e74c3c" stroke-width="3" stroke-linecap="round" />
+    }
+
+    <!-- 4: Right Arm -->
+    @if (wrongGuesses() >= 4) {
+      <line class="body-part arm-right" x1="140" y1="110" x2="170" y2="130" stroke="#e74c3c" stroke-width="3" stroke-linecap="round" />
+    }
+
+    <!-- 5: Left Leg -->
+    @if (wrongGuesses() >= 5) {
+      <line class="body-part leg-left" x1="140" y1="150" x2="115" y2="190" stroke="#e74c3c" stroke-width="3" stroke-linecap="round" />
+    }
+
+    <!-- 6: Right Leg -->
+    @if (wrongGuesses() >= 6) {
+      <line class="body-part leg-right" x1="140" y1="150" x2="165" y2="190" stroke="#e74c3c" stroke-width="3" stroke-linecap="round" />
+    }
+
+    <!-- 7: Face / Final State -->
+    @if (wrongGuesses() >= 7) {
+      <line class="body-part face-x1" x1="130" y1="63" x2="137" y2="70" stroke="#e74c3c" stroke-width="2" />
+      <line class="body-part face-x2" x1="137" y1="63" x2="130" y2="70" stroke="#e74c3c" stroke-width="2" />
+      <line class="body-part face-x3" x1="143" y1="63" x2="150" y2="70" stroke="#e74c3c" stroke-width="2" />
+      <line class="body-part face-x4" x1="150" y1="63" x2="143" y2="70" stroke="#e74c3c" stroke-width="2" />
+      <path class="body-part face-mouth" d="M132 80 Q140 87 148 80" fill="none" stroke="#e74c3c" stroke-width="2" />
+    }
+  </svg>
+</div>

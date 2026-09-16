@@ -1,0 +1,104 @@
+.game-screen {
+  min-height: 100vh;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.game-header {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.category-badge,
+.difficulty-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.category-badge {
+  background: #e8e5ff;
+  color: #6c63ff;
+}
+
+.difficulty-badge {
+  background: #fff3e0;
+  color: #ff9800;
+}
+
+.game-main {
+  display: flex;
+  gap: 3rem;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem 0;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 500px;
+  flex: 1;
+}
+
+.attempts-display {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e74c3c;
+}
+
+.hint-section {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hint-btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6c63ff;
+  background: white;
+  border: 2px solid #6c63ff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.hint-btn:hover {
+  background: #6c63ff;
+  color: white;
+}
+
+.hint-text {
+  font-size: 0.95rem;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .game-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}

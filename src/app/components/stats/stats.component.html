@@ -1,0 +1,25 @@
+<div class="stats-card">
+  <h3 class="stats-title">Statistics</h3>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-value">{{ stats.gamesPlayed }}</span>
+      <span class="stat-label">Games Played</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value win-color">{{ stats.gamesWon }}</span>
+      <span class="stat-label">Games Won</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value lose-color">{{ stats.gamesLost }}</span>
+      <span class="stat-label">Games Lost</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">{{ stats.winPercentage }}%</span>
+      <span class="stat-label">Win Rate</span>
+    </div>
+  </div>
+  <div class="best-performance">
+    <span class="stat-label">Best Performance</span>
+    <span class="stat-value">{{ stats.bestPerformance }}</span>
+  </div>
+</div>

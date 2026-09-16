@@ -1,0 +1,25 @@
+.hangman-container {
+  width: 220px;
+  height: 280px;
+}
+
+.hangman-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.body-part {
+  animation: draw 0.4s ease-out;
+}
+
+@keyframes draw {
+  0% { opacity: 0; stroke-dasharray: 100; stroke-dashoffset: 100; }
+  100% { opacity: 1; stroke-dashoffset: 0; }
+}
+
+@media (max-width: 600px) {
+  .hangman-container {
+    width: 180px;
+    height: 225px;
+  }
+}

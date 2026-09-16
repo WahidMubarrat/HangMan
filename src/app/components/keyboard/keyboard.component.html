@@ -1,0 +1,16 @@
+<div class="keyboard">
+  @for (row of rows; track $index) {
+    <div class="keyboard-row">
+      @for (letter of row; track letter) {
+        <button
+          class="key"
+          [class.used]="isUsed(letter)"
+          [disabled]="disabled() || isUsed(letter)"
+          (click)="onKeyPress(letter)"
+        >
+          {{ letter }}
+        </button>
+      }
+    </div>
+  }
+</div>

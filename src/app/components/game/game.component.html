@@ -1,0 +1,45 @@
+<div class="game-screen">
+  <div class="game-header">
+    <div class="category-badge">{{ state.category | titlecase }}</div>
+    <div class="difficulty-badge">{{ state.difficulty | titlecase }}</div>
+  </div>
+
+  <div class="game-main">
+    <div class="left-panel">
+      <app-hangman-drawing [wrongGuesses]="state.wrongGuesses" />
+      <div class="attempts-display">
+        Wrong: {{ state.wrongGuesses }} / {{ state.maxWrongGuesses }}
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <app-timer [value]="state.timerValue" [max]="10" />
+
+      <app-word-display [word]="displayWord" />
+
+      <div class="hint-section">
+        @if (!state.hintUsed) {
+          <button class="hint-btn" (click)="onHint()">💡 Use Hint</button>
+        } @else {
+          <p class="hint-text">Hint: {{ state.hint }}</p>
+        }
+      </div>
+
+      <app-keyboard
+        [usedLetters]="usedLetters"
+        [disabled]="state.isGameOver"
+        (letterGuessed)="onLetterGuess($event)"
+      />
+    </div>
+  </div>
+</div>
+
+@if (state.isGameOver) {
+  <app-result-modal
+    [won]="state.isWon"
+    [word]="state.word"
+    [wrongGuesses]="state.wrongGuesses"
+    [maxWrong]="state.maxWrongGuesses"
+    (playAgain)="onPlayAgain()"
+  />
+}
