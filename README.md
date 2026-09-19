@@ -1,6 +1,7 @@
 # Hangman Game (Angular)
 
 A responsive, timed Hangman game built with Angular standalone components.
+Live Link:https://agent-6aaea267567161cde6dbdcb2--hangmangthb.netlify.app/
 
 ## Features
 
